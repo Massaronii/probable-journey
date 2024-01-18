@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Titillium+Web:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-step Forms</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <main id="app">
+      <form>
+        <div class="step-progress">
+          <strong class="active" data-step>Contato</strong>
+          <img src="./assets/arrow-next-small-svgrepo-com (1).svg" alt="seta" />
+          <strong data-step>Empresa</strong>
+          <img src="./assets/arrow-next-small-svgrepo-com (1).svg" alt="seta" />
+          <strong data-step>Finalizado</strong>
+        </div>
+
+        <div class="form-step active">
+          <div class="content">
+            <div class="input-wrapper">
+              <label for="name">Nome</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Como prefere ser chamado"
+                required
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="phone">Telefone</label>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="Digite seu número de WhatsApp"
+                onkeypress="return /\d/.test(event.key)"
+                required
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="button-wrapper justify-end">
+            <button type="button" class="btn primary" data-action="next">CONTINUAR</button>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <div class="content">
+            <div class="input-wrapper">
+              <label for="business-name">Nome da Empresa</label>
+              <input
+                type="text"
+                name="business-name"
+                id="business-name"
+                placeholder="Qual é o nome da empresa"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="phone">Número de funciónarios</label>
+              <input
+                type="text"
+                name="business-colab-number"
+                id="business-colab-number"
+                placeholder="Digite o número dos colaboradores"
+                onkeypress="return /\d/.test(event.key)"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="business-about">Sobre seu negócio</label>
+              <textarea
+                name="business-about"
+                id="business-about"
+                placeholder="Fale um pouco sobre seus produtos e serviços"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="button-wrapper justify-end">
+            <button type="button" class="btn secundary" data-action="prev">VOLTAR</button>
+            <button type="submit" class="btn primary" data-action="next">Enviar Resposta</button>
+          </div>
+        </div>
+
+         <div class="form-step">
+          <div class="content">
+            <div class="input-wrapper">
+              <label for="project">Obrigado por enviar sua resposta</label>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
